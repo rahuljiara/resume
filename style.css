@@ -11,12 +11,23 @@ body {
     background-color: rgb(0, 26, 57);
 }
 
+/* Utility class To be Added in Html Class name */
 .flex {
     display: flex;
     align-items: center;
 }
 
-/* ---------------------------- NavBar ---------------------------- */
+
+body::-webkit-scrollbar{
+    width:10px;
+    background:rgba(88, 88, 88, 0.553);
+}
+body::-webkit-scrollbar-thumb{
+    background:rgb(255, 238, 0);
+    border-radius:50px;
+}
+
+/* -------------------------------------------------------------- NavBar -------------------------------------------------------------- */
 .navbar {
     height: 50px;
     width: 100%;
@@ -46,7 +57,6 @@ body {
 
 .navbar ul li {
     list-style: none;
-    ;
 }
 
 .navbar ul li a {
@@ -60,34 +70,96 @@ body {
 }
 
 
-/* ---------------------------- Home Page ---------------------------- */
-.home {
-    min-height: calc(100vh - 50px);
-    height:fit-content;
-    margin-top: 20px;
+.menu-icon {
+    position: relative;
+    display: none;
     justify-content: center;
-    flex-direction: column;
+    align-items: center;
+    height: 30px;
+    width: 40px;
+    margin-right:20px;
+    cursor: pointer;
+}
+.menu-icon:hover{
+    opacity: .9;
+}
+.menu-icon-bar{
+    height:6px;
+    width:100%;
+    background:white;
+    border-radius:50px;
+}
+.menu-icon-bar::before{
+    content:"";
+    position:absolute;
+    top:0px;
+    height:6px;
+    width:100%;
+    background:white;
+    border-radius:50px;
+}
+.menu-icon-bar::after{
+    content:"";
+    position:absolute;
+    bottom:0;
+    height:6px;
+    width:100%;
+    background:white;
+    border-radius:50px;
 }
 
-.top-scrollbtn{
-    height:50px;
-    width:50px;
-    background-color: bisque;
-    border-radius:50%;
-    position:fixed;
-    bottom:10px;
-    right:10px;
+
+@media screen and (max-width:700px){
+    .navbar ul{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position:absolute;
+        top:50px;
+        height:calc(100vh - 50px);
+        width:100%;
+        background:rgb(14, 14, 14);
+        overflow: hidden;
+    }
+    .menu-icon{
+        display:flex;
+    }
+}
+
+/* ---------------------------------------------------------------- Home Page ---------------------------------------------------------------- */
+.home {
+    min-height: calc(100vh - 50px);
+    height: fit-content;
+    padding: 20px 0;
+    margin-top: 20px;
+    flex-direction: column;
     justify-content: center;
-    z-index:100;
+
 }
-.top-scrollbtn> img{
-    width:40px;
+
+.top-scrollbtn {
+    height: 50px;
+    width: 50px;
+    background-color: bisque;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    justify-content: center;
+    z-index: 100;
 }
-.top-scrollbtn:hover{
- background-color: darkcyan;
+
+.top-scrollbtn>img {
+    width: 40px;
 }
-.top-scrollbtn >img:hover{
- filter:grayscale(1)
+
+.top-scrollbtn:hover {
+    background-color: darkcyan;
+}
+
+.top-scrollbtn>img:hover {
+    filter: grayscale(1)
 }
 
 .home-container {
@@ -139,9 +211,6 @@ body {
     opacity: .85;
 }
 
-
-
-
 .page-title {
     justify-content: center;
     flex-direction: column;
@@ -155,35 +224,33 @@ body {
     border: 0;
     background: white;
     margin-top: 10px;
-    margin-bottom:50px;
+    margin-bottom: 50px;
 }
 
 
-
-@media screen and (max-width:750px){
+@media screen and (max-width:850px) {
     .home-container {
-       flex-direction: column;
+        flex-direction: column;
     }
 }
-
 
 /* ----------------------------------------------------------------------- Project Page ----------------------------------------------------------------------- */
 .product-page {
     min-height: 100vh;
-    height:fit-content;
+    height: fit-content;
+    padding: 20px 0;
     width: 100%;
     background-image: url("img/about\ bg.jpg");
     background-position: center;
     background-size: cover;
-    padding: 20px 0;
     flex-direction: column;
     justify-content: center;
-    padding-bottom: 10px;
 }
 
 .product-page>.page-title h1 {
     color: black;
 }
+
 .product-page>.page-title hr {
     background-color: black;
 }
@@ -252,94 +319,108 @@ body {
 
 
 
-/* -------------------------------------------------------------------------About Page ------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------Skill Page ------------------------------------------------------------------- */
 
 .skill-page {
     min-height: 100vh;
-    height:fit-content;
+    height: fit-content;
+    padding: 20px 0;
     width: 100%;
     position: relative;
     justify-content: center;
     flex-direction: column;
-    padding-bottom: 10px;
 }
 
 .skill-card-container {
     justify-content: center;
     gap: 10px;
     flex-wrap: wrap;
-    margin-top:30px;
+    margin-top: 30px;
 }
 
 .skill-card {
     height: 130px;
-    width:280px;
+    width: 280px;
     background-color: rgba(255, 255, 255, 0.758);
-    border-radius:10px;
+    border-radius: 10px;
     justify-content: space-between;
 }
-.skill-card-progress{
+
+.skill-card-progress {
     position: relative;
-    width:120px;
-    height:100%;
+    width: 120px;
+    height: 100%;
     overflow: hidden;
 }
-.circle{
-    fill:none;
+
+.circle {
+    fill: none;
     stroke-width: 13px;
 }
-.circle1{
-    stroke:rgb(128, 128, 128);
+
+.circle1 {
+    stroke: rgb(128, 128, 128);
 }
-.circle2{
-    stroke:rgb(61, 0, 58);
+
+.circle2 {
+    stroke: rgb(61, 0, 58);
     /* stroke-dasharray: 315px; */
     stroke-linecap: round;
 }
-.html-progressbar{
+
+.html-progressbar {
     stroke-dasharray: 267.75px;
 }
-.css-progressbar{
+
+.css-progressbar {
     stroke-dasharray: 245.7px;
 }
-.js-progressbar{
+
+.js-progressbar {
     stroke-dasharray: 239.4px;
 }
-.jq-progressbar{
+
+.jq-progressbar {
     stroke-dasharray: 252px;
 }
-.react-progressbar{
+
+.react-progressbar {
     stroke-dasharray: 195.3px;
 }
-.percent{
-    position:absolute;
-    top:37%;
-    left:32%;
+
+.percent {
+    position: absolute;
+    top: 37%;
+    left: 32%;
     font-weight: bold;
-    color:black;
-    font-size: 25px;;
+    color: black;
+    font-size: 25px;
+    ;
 }
-.skill-card-disc{
-    width:150px;
+
+.skill-card-disc {
+    width: 150px;
 }
-.skill-card-disc-title{
-    height:30px;
+
+.skill-card-disc-title {
+    height: 30px;
     text-align: center;
     font-weight: bold;
     font-size: 20px;
-    color:rgb(255, 255, 255);
-    background:black;
-    border-radius:50px;
+    color: rgb(255, 255, 255);
+    background: black;
+    border-radius: 50px;
     justify-content: center;
-    margin-right:10px;
+    margin-right: 10px;
     margin-top: 2px
 }
-.skill-card-disc-disc{
-    height:88px;
+
+.skill-card-disc-disc {
+    height: 88px;
     text-align: center;
-    color:black;
-    margin-right:10px;
-    margin-top:10px;
+    color: black;
+    margin-right: 10px;
+    margin-top: 10px;
     font-weight: bold;
 }
 
@@ -351,12 +432,12 @@ body {
 /* -------------------------------------------------------------------------About Page ------------------------------------------------------------------- */
 .about-page {
     min-height: 100vh;
-    height:fit-content;
+    height: fit-content;
+    padding: 20px 0;
     width: 100%;
     background-image: linear-gradient(180deg, rgb(0, 26, 57), rgb(0, 2, 5));
     flex-direction: column;
     justify-content: center;
-    padding-bottom: 10px;
 }
 
 .about-container {
@@ -401,84 +482,98 @@ body {
     text-align: center;
     margin-top: 20px;
     font-size: 17px;
-    ;
 }
 
-
-.contact-page{
-    min-height:100vh;
-    height:fit-content;
-    width:100%;
+/* ---------------------------------------------------------------- Contact Page ---------------------------------------------------------------- */
+.contact-page {
+    min-height: 100vh;
+    height: fit-content;
+    padding: 20px 0;
+    width: 100%;
     justify-content: center;
     flex-direction: column;
-    padding-bottom: 10px;
+    background-image: linear-gradient(360deg, rgb(0, 26, 57), black);
 }
-.contact-page > form{
-   min-height:200px;
-   height:fit-content;
-   max-height:400px;
-    width:500px;
+
+.contact-page>form {
+    min-height: 200px;
+    height: fit-content;
+    max-height: 400px;
+    width: 500px;
     background-color: white;
     flex-direction: column;
-    border-radius:10px;
+    border-radius: 10px;
 
 }
-.contact-page > form input{
-    height:40px;
-    width:90%;
-    margin:10px 5%;
-    outline:none;
-    border:0;
-    color:black;
-    font-size: 15px;;
-    box-shadow:0 0 5px black;
-    border-radius:50px;
-    padding:5px;
+
+.contact-page>form input {
+    height: 40px;
+    width: 90%;
+    margin: 10px 5%;
+    outline: none;
+    border: 0;
+    color: black;
+    font-size: 15px;
+    box-shadow: 0 0 5px black;
+    border-radius: 50px;
+    padding: 5px;
 }
-.contact-page > form textarea{
-    height:150px;
-    width:90%;
-    margin:10px 5%;
-    max-width:450px;
-    outline:none;
-    border:0;
-    color:black;
-    font-size: 15px;;
-    box-shadow:0 0 5px black;
-    border-radius:10px;
-    padding:5px;
+
+.contact-page>form textarea {
+    height: 150px;
+    width: 90%;
+    margin: 10px 5%;
+    max-width: 450px;
+    outline: none;
+    border: 0;
+    color: black;
+    font-size: 15px;
+    box-shadow: 0 0 5px black;
+    border-radius: 10px;
+    padding: 5px;
 }
-.contact-page button{
-    height:35px;
-    width:100px;
-    color:rgb(255, 255, 255);
+
+.contact-page button {
+    height: 35px;
+    width: 100px;
+    color: rgb(255, 255, 255);
     font-size: 20px;
     font-weight: bold;
     justify-content: center;
-    margin-bottom:10px;
-    border:0;
-    outline:none;
-    background:rgba(0, 80, 55, 0.975);
-    border-radius:50px;
+    margin-bottom: 10px;
+    border: 0;
+    outline: none;
+    background: rgba(0, 80, 55, 0.975);
+    border-radius: 50px;
     cursor: pointer;
-    
 }
-.contact-page button:hover{
+
+.contact-page button:hover {
     opacity: .8;
 }
-.socialmedia{
-    height:60px;
-    width:300px;
-    margin:10px;
-    background:white;
+
+.socialmedia {
+    height: 60px;
+    width: 300px;
+    margin: 10px;
+    background: white;
     justify-content: space-evenly;
-    border-radius:50px;
+    border-radius: 50px;
 
 }
-.socialmedia-icon > a img{
-    height:40px;
+
+.socialmedia-icon>a img {
+    height: 40px;
     cursor: pointer;
 }
-.socialmedia-icon > a img:hover{
-    filter:grayscale(1)
+
+.socialmedia-icon>a img:hover {
+    filter: grayscale(1)
+}
+
+
+@media screen and (max-width:600px){
+    .contact-page>form {
+      width:98%;
+    }
 }

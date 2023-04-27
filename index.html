@@ -19,8 +19,13 @@
             <img src="img/profile.png" alt="">
             <a href="#home-page">Rahul Ji Ara</a>
         </div>
+      
+        <!-- menu Icon -->
+        <div class="menu-icon" onclick="navToggle()">
+            <div class="menu-icon-bar"></div>
+        </div>
 
-        <ul class="flex">
+        <ul class="flex" id="navLink">
             <li>
                 <a href="#about">About</a>
             </li>
@@ -41,9 +46,6 @@
 
 <!-- home Page  -->
     <div class="home flex" id="home-page">
-
-      
-
         <div class="home-container flex">
             <div class="home-left">
                 <img src="img/profile.png">
@@ -326,6 +328,25 @@
             </div>
         </div>
     </div>
+
+
+
+<script>
+let navlink = document.getElementById("navLink")
+navLink.style.maxHeight = "0px"
+const navToggle = () =>{
+    if(navLink.style.maxHeight == "0px"){
+        navLink.style.maxHeight = "100vh";
+        navLink.style.transition = "1s"
+    }
+    else{
+        navLink.style.maxHeight = "0px"
+        navLink.style.transition = "1s"
+    }
+}
+
+</script>
+
 </body>
 
 </html>
