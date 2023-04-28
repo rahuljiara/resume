@@ -18,15 +18,36 @@ body {
 }
 
 
-body::-webkit-scrollbar{
-    width:10px;
-    background:rgba(88, 88, 88, 0.553);
-}
-body::-webkit-scrollbar-thumb{
-    background:rgb(255, 238, 0);
-    border-radius:50px;
+body::-webkit-scrollbar {
+    width: 10px;
+    background: rgba(88, 88, 88, 0.553);
 }
 
+body::-webkit-scrollbar-thumb {
+    background: rgb(255, 238, 0);
+    border-radius: 50px;
+}
+
+
+@media screen and (max-width:167px){
+   #home-page,#contact,#about,#skill,#project,.top-scrollbtn,.navbar {
+        display: none ;
+    }
+    body:after{
+        content:"We Don't Support your Device";
+        position:absolute;
+        top:0;
+        left:0;
+        background:black;
+        height:100vh;
+        width:100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color:red;
+        text-align: center;
+    }
+}
 /* -------------------------------------------------------------- NavBar -------------------------------------------------------------- */
 .navbar {
     height: 50px;
@@ -77,56 +98,67 @@ body::-webkit-scrollbar-thumb{
     align-items: center;
     height: 30px;
     width: 40px;
-    margin-right:20px;
+    margin-right: 20px;
     cursor: pointer;
 }
-.menu-icon:hover{
+
+.menu-icon:hover {
     opacity: .9;
 }
-.menu-icon-bar{
-    height:6px;
-    width:100%;
-    background:white;
-    border-radius:50px;
+
+.menu-icon-bar {
+    height: 6px;
+    width: 100%;
+    background: white;
+    border-radius: 50px;
 }
-.menu-icon-bar::before{
-    content:"";
-    position:absolute;
-    top:0px;
-    height:6px;
-    width:100%;
-    background:white;
-    border-radius:50px;
+
+.menu-icon-bar::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    height: 6px;
+    width: 100%;
+    background: white;
+    border-radius: 50px;
 }
-.menu-icon-bar::after{
-    content:"";
-    position:absolute;
-    bottom:0;
-    height:6px;
-    width:100%;
-    background:white;
-    border-radius:50px;
+
+.menu-icon-bar::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 6px;
+    width: 100%;
+    background: white;
+    border-radius: 50px;
 }
 
 
-@media screen and (max-width:700px){
-    .navbar ul{
-        display:flex;
+@media screen and (max-width:700px) {
+    .navbar ul {
+        display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        position:absolute;
-        top:50px;
-        height:calc(100vh - 50px);
-        width:100%;
-        background:rgb(14, 14, 14);
+        position: absolute;
+        top: 50px;
+        height: calc(100vh - 50px);
+        width: 100%;
+        background: rgb(14, 14, 14);
         overflow: hidden;
     }
-    .menu-icon{
-        display:flex;
+
+    .menu-icon {
+        display: flex;
     }
 }
 
+
+@media screen and (max-width:300px){
+    .logo a {
+        font-size: 10px;;
+    }
+}
 /* ---------------------------------------------------------------- Home Page ---------------------------------------------------------------- */
 .home {
     min-height: calc(100vh - 50px);
@@ -234,6 +266,44 @@ body::-webkit-scrollbar-thumb{
     }
 }
 
+@media screen and (max-width:500px) {
+    .home-bottom {
+        gap: 10px;
+    }
+
+    .home-bottom a {
+        padding: 5px 10px;
+        font-size: 13px;
+        gap: 5px;
+    }
+
+    .home-right h1 {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width:300px) {
+    .home-left>img {
+        width: 100%;
+    }
+
+    .page-title hr {
+        width: 80%;
+    }
+
+    .home-right h1 {
+        font-size: 15px;
+    }
+
+    .home-bottom a>img {
+        display: none;
+    }
+
+    .home-bottom a {
+        font-size: 10px;
+    }
+}
+
 /* ----------------------------------------------------------------------- Project Page ----------------------------------------------------------------------- */
 .product-page {
     min-height: 100vh;
@@ -316,7 +386,14 @@ body::-webkit-scrollbar-thumb{
     background: rgba(255, 255, 255, 0.16);
 }
 
-
+@media screen and (max-width:250px) {
+    .project-card {
+        width: 98%;
+    }
+    .project-card-disc{
+        font-size: 15px;
+    }
+}
 
 
 /* -------------------------------------------------------------------------Skill Page ------------------------------------------------------------------- */
@@ -424,7 +501,56 @@ body::-webkit-scrollbar-thumb{
     font-weight: bold;
 }
 
+@media screen and (max-width:500px) {
+    .skill-card-disc-disc {
+        font-size: 15px;
+    }
+}
 
+@media screen and (max-width:300px) {
+    .skill-card {
+        width: 98%;
+    }
+
+    .percent {
+        top: 40%;
+        left: 28%;
+        font-size: 20px;
+    }
+
+    .skill-card-disc {
+        width: 50%;
+    }
+
+    .skill-card-progress {
+        width: 50%;
+    }
+
+    .circle {
+        zoom: .8;
+        position: absolute;
+        top: 10%;
+        left: 0;
+    }
+
+    .skill-card-disc-disc {
+        font-size: 12px;
+        margin: 0;
+    }
+
+    .skill-card-disc-title {
+        height: fit-content;
+        font-size: 17px;
+        margin: 0;
+    }
+
+}
+
+@media screen and (max-width:200px){
+    .skill-card{
+        zoom:.8;
+    }
+}
 
 
 
@@ -482,6 +608,26 @@ body::-webkit-scrollbar-thumb{
     text-align: center;
     margin-top: 20px;
     font-size: 17px;
+}
+
+
+@media screen and (max-width:420px) {
+    .info-card {
+        width: 98%;
+    }
+
+    .info-card .info-title {
+        font-size: 13px;
+        gap:5px;
+    }
+
+
+.info-card .info-title img {
+    width:20px;
+}
+.info-card .info-disc{
+    font-size: 10px;;
+}
 }
 
 /* ---------------------------------------------------------------- Contact Page ---------------------------------------------------------------- */
@@ -572,8 +718,17 @@ body::-webkit-scrollbar-thumb{
 }
 
 
-@media screen and (max-width:600px){
+@media screen and (max-width:600px) {
     .contact-page>form {
-      width:98%;
+        width: 98%;
+    }
+
+    .socialmedia {
+        width: 98%;
+        height: 40px;
+    }
+
+    .socialmedia-icon>a img {
+        height: 30px;
     }
 }
